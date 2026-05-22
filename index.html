@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="CSS/base.css" rel="stylesheet">
+        <link href="CSS/index.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <title>Garvit Agrawal</title>
+    </head>
+
+
+
+    <body>
+        
+        <header>
+            
+            <nav>
+                <a href="index.html" class="logo-wrap">
+                    <img src="images/logo-deco.png" alt="" class="logo-circle">
+                    <span class="logo">GA</span>
+                </a>
+                <ul class="top-nav">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false" type="button">
+                    <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+                    <span class="theme-icon theme-icon-dark"  aria-hidden="true">☽</span>
+                </button>
+            </nav>
+
+            
+        </header>
+
+
+        
+        <main>
+        
+            <section class="hero">
+                <div>
+                    <span class="hero-label animate-in" style="--delay: 0ms">CS STUDENT · IIIT HYDERABAD · 2025</span>
+                    <h1 class="hero-title animate-in" style="--delay: 150ms">Garvit Agrawal</h1>
+                    <p class="hero-intro animate-in" style="--delay: 300ms">I build things that think — from CLI game engines to sensor fusion systems. Mostly interested in the code nobody sees, the kind that makes everything else run quietly.</p>
+                    <div class="hero-button animate-in" style="--delay: 450ms">
+                        <a href="projects.html">View Projects</a>
+                        <a href="about.html">About Me</a>
+                    </div>
+                </div>
+
+                <aside class="aside-block animate-in" style="--delay: 600ms">
+                    <h2>INTERESTS</h2>
+                    <div class="interests-row">
+                        <p>🎵 Singing</p>
+                        <p>🕺 Freestyle dancing</p>
+                        <p>🏐 Volleyball</p>
+                    </div>
+                </aside>
+
+
+
+
+            </section>
+        
+
+                
+            <section class="skills-strip">
+                <ul>
+                    <li>C / C++</li>
+                    <li>Python</li>
+                    <li>HTML · CSS · JS</li>
+                    <li>Git</li>
+                    <li>Data Structures</li>
+                    <li>Algorithms</li>
+                    <li>Linux / Bash</li>
+                </ul>
+            </section>
+
+
+            <div class="container">
+                <section class="proj-section section-scroll">
+                    <span class="proj-label">SELECTED WORK</span>
+                    <h3 class="proj-title">Projects</h3>
+
+                    <div class="grid">
+                        <article id="twixt">
+                            <span class="tags">C · ALGORITHMS · GAME</span>
+                            <h4 class="title">Twixt CLI</h4>
+                            <p class="desc">A fully playable command-line version of Twixt. Uses depth-first search to validate win conditions and detect connected paths across the board in real time.</p>
+                            <a href="projects.html#twixt" class="link">View project →</a>
+                        </article>
+
+                        <article>
+                            <span class="tags">C · DATA STRUCTURES · FILE I/O · MEMORY MANAGEMENT</span>
+                            <h4 class="title">Music Library Manager</h4>
+                            <p class="desc">Persistent music library with manual memory management, circular doubly linked lists, and a custom CSV parsing engine.</p>
+                            <a href="projects.html#music-player" class="link">View project →</a>
+                        </article>
+
+                        <article>
+                            <span class="tags">IOT · ESP32 · SENSOR FUSION · HTTP</span>
+                            <h4 class="title">Smart Water Monitor</h4>
+                            <p class="desc">IoT sensor system using ultrasonic and water-level sensor fusion, linear regression calibration, and HTTP data transmission.</p>
+                            <a href="projects.html#smart-water" class="link">View project →</a>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+
+
+        <footer>
+            <div class="container">
+                <p>Garvit Agrawal · IIIT Hyderabad</p>
+
+                <nav class="bottom-nav">
+                    <a href="mailto:garvit.agrawal@students.iiit.ac.in">Email</a>
+                    <a href="https://github.com/Garvit-Agr" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/garvit-agrawal-1a56a4377/" target="_blank">LinkedIn</a>
+                </nav>
+
+            </div>
+        </footer>
+
+        <script src="JS/theme.js"></script>
+        <script src="JS/scroll.js"></script>
+    </body>
+</html>

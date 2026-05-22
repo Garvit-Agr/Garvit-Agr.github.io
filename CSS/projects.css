@@ -1,0 +1,217 @@
+/* -----Heading------ */
+.heading {
+    padding: 5rem 0 var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 4rem;
+}
+
+.page-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-bg-darker);
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+/* -----Filter Bar------ */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.filter-bar p {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-right: var(--space-sm);
+    max-width: none;
+}
+
+.filter-bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.filter-list button {
+    padding: var(--space-xs) 0.75rem;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    border-radius: 999px;
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-extreme);
+    color: var(--color-text);
+}
+
+.filter-list button:hover {
+    border-color: var(--color-bg-darker);
+    color: var(--color-bg-darker);
+}
+
+.filter-list button[aria-pressed="true"] {
+    background-color: var(--color-bg-darker);
+    border-color: var(--color-bg-darker);
+    color: var(--color-bg);
+}
+
+/* -----Filter------ */
+.filter-bar li.is-active {
+    background-color: var(--color-bg-darker);
+    border-color: var(--color-bg-darker);
+    color: var(--color-text);
+}
+
+/* -----Filter Clear button------ */
+.clear-btn {
+    margin-left: auto;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.clear-btn:hover {
+    color: var(--color-bg-darker);
+    text-decoration: underline;
+}
+
+/* -----Projects Grid Layout------ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    align-items: start;
+}
+
+#twixt {
+    grid-column: 1 / 3;
+}
+
+
+/* -----Project Box------ */
+.project-box {
+    padding: var(--space-xl) 1.5rem;
+    background-color: var(--color-extreme);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px var(--color-shadow);
+    border-color: var(--color-bg-darker);
+    background-color: var(--color-bg-hover);
+}
+
+.project-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.project-box ul li {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    padding: 3px 0.75rem;
+    background-color: var(--color-bg-hover);
+    color: var(--color-bg-darker);
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+}
+
+.project-box h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.project-box > p {
+    font-size: var(--text-xs);
+    color: var(--color-text);
+    letter-spacing: 0.06em;
+    max-width: none;
+}
+
+.project-box h4 {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    margin-top: var(--space-sm);
+}
+
+.project-box h4 + p {
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    max-width: none;
+}
+
+/* -----Responsive------ */
+@media (max-width: 640px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #twixt {
+        grid-column: 1/2;
+    }
+
+    .project-box {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .filter-bar li {
+        font-size: var(--text-xs);
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+
+
+/* -----No Match Filter------ */
+.no-match {
+    display: none;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--color-text);
+}
+
+.no-match p { max-width: none; }
+
+
+/* -----Theme Transition------ */
+.heading,
+.filter-bar p,
+.filter-list button,
+.clear-btn,
+.project-box,
+.project-box ul li,
+.project-box h4 {
+    transition:
+        background-color 600ms ease,
+        color 600ms ease,
+        border-color 600ms ease,
+        filter 600ms ease,
+        opacity 600ms ease;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="CSS/base.css" rel="stylesheet">
+        <link href="CSS/projects.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <title>Projects — Garvit Agrawal</title>
+    </head>
+
+
+    
+    <body>
+        
+        <header>
+            
+            <nav>
+                <a href="index.html" class="logo-wrap">
+                    <img src="images/logo-deco.png" alt="" class="logo-circle">
+                    <span class="logo">GA</span>
+                </a>
+                <ul class="top-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false" type="button">
+                    <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+                    <span class="theme-icon theme-icon-dark"  aria-hidden="true">☽</span>
+                </button>
+            </nav>
+
+        </header>
+
+
+        
+        <main>
+            <div class="container">
+                <section class="heading">
+                    <span class="page-label">WORK</span>
+                    <h1>My Projects</h1>
+                </section>
+
+                <section class="filter-bar">
+                    <p>Filter by:</p>
+                    
+                    <ul class="filter-list">
+                        <li><button type="button" aria-pressed="false">C</button></li>
+                        <li><button type="button" aria-pressed="false">ALGORITHMS</button></li>
+                        <li><button type="button" aria-pressed="false">GAME</button></li>
+                        <li><button type="button" aria-pressed="false">DATA STRUCTURES</button></li>
+                        <li><button type="button" aria-pressed="false">FILE I/O</button></li>
+                        <li><button type="button" aria-pressed="false">MEMORY MANAGEMENT</button></li>
+                        <li><button type="button" aria-pressed="false">IOT</button></li>
+                        <li><button type="button" aria-pressed="false">ESP32</button></li>
+                        <li><button type="button" aria-pressed="false">SENSOR FUSION</button></li>
+                        <li><button type="button" aria-pressed="false">HTTP</button></li>
+                    </ul>
+
+                    <button id="clrBtn" class="clear-btn">Clear all</button>
+                </section>
+
+                <div class="projects-grid">
+
+                    <section class="project-box" id="twixt">
+                        <ul>
+                            <li>C</li>
+                            <li>ALGORITHMS</li>
+                            <li>GAME</li>
+                        </ul>
+
+                        <h2>Twixt CLI</h2>
+                        <p>CS0.101 · SEMESTER 1 · PROF. GIRISH VARMA</p>
+
+                        <h4>WHAT IT DOES</h4>
+                        <p>
+                            A fully playable command-line version of Twixt — a two-player strategy board game where each player places pegs and links them to build a connected path across the board. The program handles move validation, player state, and board rendering in the terminal, updating the display after every turn without flicker. Win detection runs depth-first search on the graph of each player's connections to find a valid path from one side to the other.
+                        </p>
+
+                        <h4>WHY I BUILT IT</h4>
+                        <p>
+                            First semester project in CS0.101. It was the first time I applied graph algorithms to something that actually moved — seeing DFS run on a live board state made the theory feel real in a way that textbook problems don't quite manage.
+                        </p>
+
+                        <h4>WHAT I'D DO DIFFERENTLY</h4>
+                        <p>
+                            The board rendering was the most time-consuming part. Drawing the grid with raw - and | characters in a loop got messy fast — any layout change meant rewriting the whole rendering logic. I'd build a proper abstraction layer for the display from the start, separate from the game state, so they can change independently.
+                        </p>
+
+                        <h4>TECHNOLOGY TRADEOFFS</h4>
+                        <p>
+                            DFS is correct for win detection but re-runs on every move, which is fine for a 24×24 board. For a larger variant you'd want an incremental union-find approach instead. I also used a 2D array for the board — simpler than a graph adjacency list, but meant a lot of index arithmetic throughout the code.
+                        </p>
+
+                    </section>
+                    
+
+
+
+                    <section class="project-box" id="music-player">
+                        <ul>
+                            <li>C</li>
+                            <li>DATA STRUCTURES</li>
+                            <li>FILE I/O</li>
+                            <li>MEMORY MANAGEMENT</li>
+                        </ul>
+
+                        <h2>Music Library Manager</h2>
+                        <p>CS0.101 · SEMESTER 1 · PROF. GIRISH VARMA</p>
+
+                        <h4>WHAT IT DOES</h4>
+                        <p>
+                            A persistent music library simulation that stores songs and playlists across sessions using CSV files. Supports full CRUD operations — adding, removing, updating, and searching songs. Playlists are stored as circular doubly linked lists for efficient forward and backward traversal, and all memory is managed manually with malloc and free.
+                        </p>
+
+                        <h4>WHY I BUILT IT</h4>
+                        <p>
+                            Another CS0.101 project, but this one landed at exactly the right moment — I'd just learned file handling, and suddenly here was a real use case for it. Reading and writing structured data to disk, parsing CSV records, managing memory across sessions. It clicked in a way it wouldn't have as a standalone exercise.
+                        </p>
+
+                        <h4>WHAT I'D DO DIFFERENTLY</h4>
+                        <p>
+                            The CSV parser was character-by-character and broke on edge cases — song names with commas in them would corrupt the parse entirely. I'd write a proper quoted-field parser from the start, or at least add a delimiter escape scheme. Also, circular doubly linked lists are great for traversal but O(n) for search — a hash map would be faster if the library grew large.
+                        </p>
+
+                        <h4>TECHNOLOGY TRADEOFFS</h4>
+                        <p>
+                            Manual memory management with malloc/free gave precise control but required tracking every allocation. One missed free and the library would leak memory with every session. The circular doubly linked list structure was good for playlist operations but overkill for a simple song index.
+                        </p>
+
+                    </section>
+                    
+
+
+
+                    <section class="project-box" id="smart-water">
+                        <ul>
+                            <li>IOT</li>
+                            <li>ESP32</li>
+                            <li>SENSOR FUSION</li>
+                            <li>HTTP</li>
+                        </ul>
+
+                        <h2>Smart Water Level Monitor</h2>
+                        <p>CS3.303 · SEMESTER 2 · PROF. KAVITA VEMURI & PROF. SURESH PURINI</p>
+
+                        <h4>WHAT IT DOES</h4>
+                        <p>
+                            An IoT system that monitors water level in a container using three sensors: an HC-SR04 ultrasonic sensor measures distance to the water surface, an analogue water level sensor provides a reference ADC reading, and an IR sensor detects whether the container is even present. The two main sensors are calibrated against each other using linear regression, and the processed data is transmitted over Wi-Fi via HTTP to ThingSpeak for remote monitoring.
+                        </p>
+
+                        <h4>WHY I BUILT IT</h4>
+                        <p>
+                            Lab mini-project for our IoT course. The sensor fusion aspect was genuinely interesting — the ultrasonic sensor alone gave noisy readings due to surface reflections, and combining it with the analogue reference made the system significantly more stable. Watching data appear on ThingSpeak in real time from a physical device was a different kind of satisfying from pure software work.
+                        </p>
+
+                        <h4>WHAT I'D DO DIFFERENTLY</h4>
+                        <p>
+                            The linear regression calibration was computed manually from 10 data points — not a lot. I'd automate the calibration process and take more samples. I'd also add a moving average filter on the ultrasonic readings to smooth out the reflection noise rather than relying on calibration to paper over it. For deployment beyond a lab, MQTT would replace HTTP — it's designed for unreliable networks and handles reconnections better than raw HTTP over Wi-Fi.
+                        </p>
+
+                        <h4>TECHNOLOGY TRADEOFFS</h4>
+                        <p>
+                            Using two sensors instead of one adds cost and wiring complexity, but the accuracy improvement was worth it in this case — the ultrasonic sensor alone had measurement errors of several centimetres near the water surface. The ESP32 over Wi-Fi is convenient for prototyping but power-hungry for a device that should ideally run for months on battery.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <div id="noMatch" class="no-match">
+                <p>No projects match that filter.</p>
+                <p>Try selecting fewer tags.</p>
+            </div>
+
+            
+        </main>
+
+
+
+        <footer>
+            <div class="container">
+                <p>Garvit Agrawal · IIIT Hyderabad</p>
+
+                <nav class="bottom-nav">
+                    <a href="mailto:garvit.agrawal@students.iiit.ac.in">Email</a>
+                    <a href="https://github.com/Garvit-Agr" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/garvit-agrawal-1a56a4377/" target="_blank">LinkedIn</a>
+                </nav>
+
+            </div>
+        </footer>
+
+
+        <script src="JS/theme.js"></script>
+        <script src="JS/filter.js"></script>
+
+    </body>
+</html>
